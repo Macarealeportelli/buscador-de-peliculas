@@ -2,37 +2,39 @@ import styled from "styled-components";
 
 const Tarjeta = styled.article`
   margin: 5px;
-  padding: 10px;
+  width: 18%;
 
-  width: 250px;
-  height: 400px;
-
-  border: solid 1px black;
   display: flex;
-  justify-content: center;
+
   flex-direction: column;
 
   color: #fafafa;
 `;
 
+const Imagen = styled.img`
+  width: 100%;
+`;
 const Contenedor = styled.div`
+  width: 100%;
+  margin: 5px;
+
   display: flex;
   justify-content: center;
-  align-items: center;
+
   flex-direction: column;
 `;
 
 const Titulo = styled.h4`
   font-family: "Montserrat Alternates";
-  font-size: 20px;
-  font-weight: 300;
+  font-size: 18px;
+  font-weight: 800;
 `;
 
 const Card = ({ title, poster_path }) => {
   return (
     <Tarjeta>
       <Contenedor>
-        <img src= "https://image.tmdb.org/t/p/w370_and_h556_bestv2{poster_path}"/>
+        <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
         <Titulo>{title}</Titulo>
       </Contenedor>
     </Tarjeta>

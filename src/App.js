@@ -63,6 +63,11 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/peliculas" component={Peliculas} />
           <Route exact path="/series" component={Series} />
+          {/* <Route exact path="/series" component={PeliculasTendencias} />
+          <Route exact path="/series" component={PeliculasPopulares} />
+          <Route exact path="/series" component={Series} />
+          <Route exact path="/series" component={Series} />
+          <Route exact path="/series" component={Series} /> */}
         </Switch>
       </BrowserRouter>
       

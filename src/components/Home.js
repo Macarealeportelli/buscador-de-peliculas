@@ -4,18 +4,32 @@ import useFetchPeliculas from "../hooks/useFetchPeliculas";
 import useFetchSeries from "../hooks/useFetchSeries";
 import Card from "../commons/Card";
 
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+
 const StyledSection = styled.section`
-  padding:25px;
-  
+  padding: 20px;
   background-color: grey;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  color: #fafafa;
 `;
 
 const Container = styled.section`
   display: flex;
   flex-wrap: wrap;
+`;
+
+const Icono = styled.span`
+margin-left: 10px;
+`;
+
+const Titulo = styled.h2`
+  font-family: "Montserrat Alternates";
+  font-size: 30px;
+  font-weight: 800;
+
+  display: flex;
 `;
 
 const URL_SERIES_TENDENCIAS =
@@ -35,18 +49,22 @@ const Home = () => {
   return (
     <>
       <StyledSection>
-        <h3>Peliculas que son tendencia</h3>
+        <Titulo>Peliculas que son tendencia <Icono>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </Icono></Titulo>
         <Container>
           {destacadasPelisTendencia.map((pelicula) => (
-            <Card title={pelicula.title} />
+            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
           ))}
         </Container>
       </StyledSection>
       <StyledSection>
-        <h3>Series que son tendencia</h3>
+        <Titulo>Series que son tendencia <Icono>
+            <FontAwesomeIcon icon={faArrowRight} />
+          </Icono></Titulo>
         <Container>
           {destacadasSeriesTendencia.map((serie) => (
-            <Card title={serie.name} />
+            <Card title={serie.name} poster_path={serie.poster_path} />
           ))}
         </Container>
       </StyledSection>
