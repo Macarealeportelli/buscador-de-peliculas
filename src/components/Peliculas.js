@@ -30,12 +30,19 @@ const URL_PELICULAS_POPULARES =
 const URL_PELICULAS_A_ESTRENAR =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
+const URL_PELICULAS_EN_CINES = "https://api.themoviedb.org/3/movie/now_playing?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
+
 const Peliculas = () => {
   const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
 
   const peliculasAEstrenar = useFetchPeliculas(URL_PELICULAS_A_ESTRENAR);
   const destacadasPeliculasAEstrenar = peliculasAEstrenar.slice(0, 5);
+
+  const peliculasEnCines = useFetchPeliculas(URL_PELICULAS_EN_CINES);
+  const destacadasPeliculasEnCines = peliculasEnCines.slice(0,5);
+
+
   //   const peliculasPuntuadas = useFetchPeliculas(URL_PELICULAS_PUNTUADAS);
   //   const ultimosLanzamientos = useFetchPeliculas(URL_PELICULAS_ULTIMAS);
 
@@ -55,19 +62,22 @@ const Peliculas = () => {
         </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
-        <div>
-          {" "}
-          <Titulo>
-            Películas con mejores críticas{" "}
+      <Titulo>
+            Películas con mejores críticas
             <span>
               <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </Titulo>
-        </div>
+        <ContenedorTarjetas>
+        {destacadasPeliculasPopulares.map((pelicula) => (
+            <Card title={pelicula.title} />
+          ))}
+         
+        </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
         <Titulo>
-          Películas a estrenarse
+          Películas a estrenar
           <span>
             <FontAwesomeIcon icon={faArrowRight} />
           </span>
@@ -79,15 +89,18 @@ const Peliculas = () => {
         </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
-        <div>
-          {" "}
-          <Titulo>
-            Películas en cines{" "}
+      <Titulo>
+            Películas en cines
             <span>
               <FontAwesomeIcon icon={faArrowRight} />
             </span>
           </Titulo>
-        </div>
+        <ContenedorTarjetas>
+        {destacadasPeliculasEnCines.map((pelicula) => (
+            <Card title={pelicula.title} />
+          ))}
+         
+        </ContenedorTarjetas>
       </StyledSection>
     </>
   );
