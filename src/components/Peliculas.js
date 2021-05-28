@@ -27,7 +27,7 @@ const ContenedorTarjetas = styled.div`
 `;
 
 const Icono = styled.span`
-margin-left: 10px;
+  margin-left: 10px;
 `;
 
 const URL_PELICULAS_POPULARES =
@@ -39,6 +39,9 @@ const URL_PELICULAS_A_ESTRENAR =
 const URL_PELICULAS_EN_CINES =
   "https://api.themoviedb.org/3/movie/now_playing?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
+const URL_PELICULAS_MEJORES_CRITICAS =
+  "https://api.themoviedb.org/3/movie/top_rated?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
+
 const Peliculas = () => {
   const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
@@ -49,8 +52,8 @@ const Peliculas = () => {
   const peliculasEnCines = useFetchPeliculas(URL_PELICULAS_EN_CINES);
   const destacadasPeliculasEnCines = peliculasEnCines.slice(0, 5);
 
-  //   const peliculasPuntuadas = useFetchPeliculas(URL_PELICULAS_PUNTUADAS);
-  //   const ultimosLanzamientos = useFetchPeliculas(URL_PELICULAS_ULTIMAS);
+  const peliculasMejoresCriticas = useFetchPeliculas(URL_PELICULAS_MEJORES_CRITICAS);
+  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);
 
   return (
     <>
@@ -75,7 +78,7 @@ const Peliculas = () => {
           </Icono>
         </Titulo>
         <ContenedorTarjetas>
-          {destacadasPeliculasPopulares.map((pelicula) => (
+          {destacadasPeliculasMejoresCriticas.map((pelicula) => (
             <Card title={pelicula.title} poster_path={pelicula.poster_path} />
           ))}
         </ContenedorTarjetas>

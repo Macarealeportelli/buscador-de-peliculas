@@ -45,7 +45,7 @@ const Home = () => {
   const seriesTendencias = useFetchSeries(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
 
-  console.log(destacadasPelisTendencia, destacadasSeriesTendencia)
+ 
   return (
     <>
       <StyledSection>
