@@ -5,6 +5,8 @@ import useFetchSeries from "../hooks/useFetchSeries";
 import Card from "../commons/Card";
 
 const StyledSection = styled.section`
+  padding:25px;
+  
   background-color: grey;
   display: flex;
   flex-direction: column;

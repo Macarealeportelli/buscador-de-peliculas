@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Destacadas from "../commons/Destacadas.js";
+
 import Card from "../commons/Card.js";
 import styled from 'styled-components'
 
