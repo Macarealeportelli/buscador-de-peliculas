@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import React, { useState, useEffect } from "react";
 import useFetchPeliculas from "../hooks/useFetchPeliculas";
 import useFetchSeries from "../hooks/useFetchSeries";
 import Card from "../commons/Card";

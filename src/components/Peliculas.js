@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from "react";
 import Card from "../commons/Card.js";
 import styled from "styled-components";
 import useFetchPeliculas from "../hooks/useFetchPeliculas";
