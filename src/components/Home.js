@@ -4,6 +4,9 @@ import useFetchPeliculas from "../hooks/useFetchPeliculas";
 import useFetchSeries from "../hooks/useFetchSeries";
 import Card from "../commons/Card";
 
+import { Link } from "react-router-dom";
+
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -21,7 +24,7 @@ const Container = styled.section`
 `;
 
 const Icono = styled.span`
-margin-left: 10px;
+  margin-left: 10px;
 `;
 
 const Titulo = styled.h2`
@@ -30,6 +33,18 @@ const Titulo = styled.h2`
   font-weight: 800;
 
   display: flex;
+`;
+
+const StyledLink = styled(Link)`
+  margin: 20px;
+  text-decoration: none;
+  color: #fafafa;
+  &:visited {
+    color: #fafafa;
+  }
+  &:active {
+    color: rgb(33, 150, 243);
+  }
 `;
 
 const URL_SERIES_TENDENCIAS =
@@ -45,26 +60,43 @@ const Home = () => {
   const seriesTendencias = useFetchSeries(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
 
- 
   return (
     <>
       <StyledSection>
-        <Titulo>Peliculas que son tendencia <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono></Titulo>
+        <StyledLink to="/peliculas-tendencias">
+          <Titulo>
+            Peliculas que son tendencia
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>
+        </StyledLink>
         <Container>
           {destacadasPelisTendencia.map((pelicula) => (
-            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
+            <Card
+              key={pelicula.id}
+              title={pelicula.title}
+              poster_path={pelicula.poster_path}
+            />
           ))}
         </Container>
       </StyledSection>
       <StyledSection>
-        <Titulo>Series que son tendencia <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono></Titulo>
+        <StyledLink to="/series-tendencias">
+          <Titulo>
+            Series que son tendencia
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>
+        </StyledLink>
         <Container>
           {destacadasSeriesTendencia.map((serie) => (
-            <Card title={serie.name} poster_path={serie.poster_path} />
+            <Card
+              key={serie.id}
+              title={serie.name}
+              poster_path={serie.poster_path}
+            />
           ))}
         </Container>
       </StyledSection>

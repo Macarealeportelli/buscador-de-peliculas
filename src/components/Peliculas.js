@@ -3,6 +3,8 @@ import Card from "../commons/Card.js";
 import styled from "styled-components";
 import useFetchPeliculas from "../hooks/useFetchPeliculas";
 
+import { Link } from "react-router-dom";
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
@@ -30,8 +32,20 @@ const Icono = styled.span`
   margin-left: 10px;
 `;
 
+const StyledLink = styled(Link)`
+  margin: 20px;
+  text-decoration: none;
+  color: #fafafa;
+  &:visited {
+    color: #fafafa;
+  }
+  &:active {
+    color: rgb(33, 150, 243);
+  }
+`;
+
 const URL_PELICULAS_POPULARES =
-  "https://api.themoviedb.org/3/tv/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
+  "https://api.themoviedb.org/3/movie/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const URL_PELICULAS_A_ESTRENAR =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
@@ -52,60 +66,91 @@ const Peliculas = () => {
   const peliculasEnCines = useFetchPeliculas(URL_PELICULAS_EN_CINES);
   const destacadasPeliculasEnCines = peliculasEnCines.slice(0, 5);
 
-  const peliculasMejoresCriticas = useFetchPeliculas(URL_PELICULAS_MEJORES_CRITICAS);
-  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);
+  const peliculasMejoresCriticas = useFetchPeliculas(
+    URL_PELICULAS_MEJORES_CRITICAS
+  );
+  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(
+    0,
+    5
+  );
 
   return (
     <>
       <StyledSection>
-        <Titulo>
-          Películas populares
-          <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono>
-        </Titulo>
+        <StyledLink to="/peliculas-populares">
+          {" "}
+          <Titulo>
+            Películas populares
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>{" "}
+        </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasPopulares.map((pelicula) => (
-            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
+            <Card
+              key={pelicula.id}
+              title={pelicula.title}
+              poster_path={pelicula.poster_path}
+            />
           ))}
         </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
-        <Titulo>
-          Películas con mejores críticas
-          <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono>
-        </Titulo>
+        <StyledLink to="/peliculas-mejores-criticas">
+          <Titulo>
+            Películas con mejores críticas
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>{" "}
+        </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasMejoresCriticas.map((pelicula) => (
-            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
+            <Card
+              key={pelicula.id}
+              title={pelicula.title}
+              poster_path={pelicula.poster_path}
+            />
           ))}
         </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
-        <Titulo>
-          Películas a estrenar
-          <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono>
-        </Titulo>
+        <StyledLink to="/peliculas-a-estrenar">
+          {" "}
+          <Titulo>
+            Películas a estrenar
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>{" "}
+        </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasAEstrenar.map((pelicula) => (
-            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
+            <Card
+              key={pelicula.id}
+              title={pelicula.title}
+              poster_path={pelicula.poster_path}
+            />
           ))}
         </ContenedorTarjetas>
       </StyledSection>
       <StyledSection>
-        <Titulo>
-          Películas en cines
-          <Icono>
-            <FontAwesomeIcon icon={faArrowRight} />
-          </Icono>
-        </Titulo>
+        <StyledLink to="/peliculas-en-cines">
+          <Titulo>
+            Películas en cines
+            <Icono>
+              <FontAwesomeIcon icon={faArrowRight} />
+            </Icono>
+          </Titulo>{" "}
+        </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasEnCines.map((pelicula) => (
-            <Card title={pelicula.title} poster_path={pelicula.poster_path} />
+            <Card
+              key={pelicula.id}
+              title={pelicula.title}
+              poster_path={pelicula.poster_path}
+            />
           ))}
         </ContenedorTarjetas>
       </StyledSection>
