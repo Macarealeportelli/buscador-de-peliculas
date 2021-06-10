@@ -41,7 +41,7 @@ const Card = ({ title, poster_path , id}) => {
   // console.log(id)
   return (
    
-    <Tarjeta onClick={handleClickDetalle(id)}>
+    <Tarjeta onClick={handleClickDetalle}>
       <Contenedor>
         <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
         <Titulo>{title}</Titulo>
