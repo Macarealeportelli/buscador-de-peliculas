@@ -12,7 +12,7 @@ const Titulo = styled.h2`
 
 const StyledSection = styled.section`
   padding: 20px;
-  background-color: grey;
+  background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;
   color: #fafafa;

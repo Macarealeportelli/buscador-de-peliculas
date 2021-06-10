@@ -9,7 +9,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const StyledSection = styled.section`
   padding: 20px;
-  background-color: grey;
+  background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;
   color: #fafafa;
@@ -78,6 +78,7 @@ const Series = () => {
               key={serie.id}
               title={serie.name}
               poster_path={serie.poster_path}
+              id={serie.id}
             />
           ))}
         </ContenedorTarjetas>

@@ -14,6 +14,7 @@ import SeriesTendencia from "./components/SeriesTendencia";
 import SeriesPopulares from "./components/SeriesPopulares";
 import SeriesMejoresCriticas from "./components/SeriesMejoresCriticas";
 import SeriesAlAire from "./components/SeriesAlAire";
+import Detalle from "./commons/Detalle.js";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -78,10 +79,11 @@ function App() {
           <Route exact path="/peliculas-a-estrenar" component={PeliculasAEstrenar} />
           <Route exact path="/peliculas-en-cines" component={PeliculasEnCines} />
           <Route exact path="/peliculas-mejores-criticas" component={PeliculasMejoresCriticas} />
-         <Route exact path="/series-tendencias" component={SeriesTendencia} /> 
+          <Route exact path="/series-tendencias" component={SeriesTendencia} /> 
           <Route exact path="/series-populares" component={SeriesPopulares} />
           <Route exact path="/series-mejores-criticas" component={SeriesMejoresCriticas} />
           <Route exact path="/series-al-aire" component={SeriesAlAire} /> 
+          <Route exact path="/movie/337404" component={Detalle}/>
         </Switch>
       </BrowserRouter>
       

@@ -11,7 +11,7 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const StyledSection = styled.section`
   padding: 20px;
-  background-color: grey;
+  background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;
   color: #fafafa;
@@ -52,9 +52,12 @@ const URL_SERIES_TENDENCIAS =
 const URL_PELICULAS_TENDENCIA =
   "https://api.themoviedb.org/3/trending/movie/week?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
+  
+
 const Home = () => {
   const peliculasTendencia = useFetchPeliculas(URL_PELICULAS_TENDENCIA);
   const destacadasPelisTendencia = peliculasTendencia.slice(0, 5);
+  console.log(peliculasTendencia)
 
   const seriesTendencias = useFetchSeries(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
@@ -76,6 +79,7 @@ const Home = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
             />
           ))}
         </Container>
@@ -95,6 +99,7 @@ const Home = () => {
               key={serie.id}
               title={serie.name}
               poster_path={serie.poster_path}
+              id={serie.id}
             />
           ))}
         </Container>

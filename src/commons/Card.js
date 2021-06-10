@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import Detalle from "./Detalle";
 
 const Tarjeta = styled.article`
   margin: 5px;
@@ -17,6 +18,7 @@ const Imagen = styled.img`
 const Contenedor = styled.div`
   width: 100%;
   margin: 5px;
+ 
 
   display: flex;
   justify-content: center;
@@ -26,13 +28,20 @@ const Contenedor = styled.div`
 
 const Titulo = styled.h4`
   font-family: "Montserrat Alternates";
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 800;
+  margin-left: 5px;
 `;
 
-const Card = ({ title, poster_path }) => {
+const handleClickDetalle=(id)=>{
+  console.log('me hiceron click', id)
+}
+
+const Card = ({ title, poster_path , id}) => {
+  // console.log(id)
   return (
-    <Tarjeta>
+   
+    <Tarjeta onClick={handleClickDetalle(id)}>
       <Contenedor>
         <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
         <Titulo>{title}</Titulo>
