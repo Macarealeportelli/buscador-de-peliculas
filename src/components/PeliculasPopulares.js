@@ -39,7 +39,7 @@ const PeliculasPopulares=()=>{
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
-              mediaType={pelicula.media_type}
+              mediaType={'movie'}
             />
           ))}
         </ContenedorTarjetas>

@@ -79,7 +79,7 @@ const Series = () => {
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
-              mediaType={serie.media_type}
+              mediaType={'tv'}
             />
           ))}
         </ContenedorTarjetas>
@@ -99,6 +99,8 @@ const Series = () => {
               key={serie.id}
               title={serie.name}
               poster_path={serie.poster_path}
+              id={serie.id}
+              mediaType={'tv'}
             />
           ))}
         </ContenedorTarjetas>
@@ -119,6 +121,8 @@ const Series = () => {
               key={serie.id}
               title={serie.name}
               poster_path={serie.poster_path}
+              id={serie.id}
+              mediaType={'tv'}
             />
           ))}
         </ContenedorTarjetas>

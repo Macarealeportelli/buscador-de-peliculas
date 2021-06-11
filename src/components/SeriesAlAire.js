@@ -46,7 +46,7 @@ const seriesAlAire = useFetchSeries(URL_SERIES_AL_AIRE);
             title={serie.name}
             poster_path={serie.poster_path}
             id={serie.id}
-            mediaType={serie.media_type}
+            mediaType={'tv'}
           />
         ))}
       </Container>

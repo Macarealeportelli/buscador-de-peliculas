@@ -49,7 +49,7 @@ const SeriesTendencia=()=>{
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
-              mediaType={serie.media_type}
+              mediaType={'tv'}
             />
           ))}
         </Container>

@@ -156,8 +156,8 @@ console.log(detalles)
                 <p>{detalles.overview}</p>
                 <p>Duración: {detalles.runtime} min.</p>
                 <p>Géneros: {generos(detalles)} </p>
-                <p>Presupuesto: $ {detalles.budget}</p>
-                <p>Recaudación: $ {detalles.revenue}</p>
+                <p>Presupuesto: {detalles.budget ? "$" + detalles.budget.toLocaleString() : "-"}</p>
+                <p>Recaudación: {detalles.revenue ? "$" + detalles.revenue.toLocaleString() : "-"}</p>
                 <p>Producción: {producciones(detalles)}</p>
                 <h5>Iconitos/links</h5>
                 

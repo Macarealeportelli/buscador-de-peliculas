@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar , faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-import { farStar } from "@fortawesome/free-regular-svg-icons";
+// import { fasStar } from "@fortawesome/free-regular-svg-icons";
 
 const Icono = styled.span`
   margin-left: 10px;
@@ -25,7 +25,7 @@ const Rating = ({rating}) => {
       stars.push(<Icono><FontAwesomeIcon icon={faStarHalfAlt} key={`half`} /></Icono>);
 
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Icono><FontAwesomeIcon icon={farStar} key={`empty-${i}`} /></Icono>);
+      stars.push(<Icono><FontAwesomeIcon icon={faStar} key={`empty-${i}`} /></Icono>);
     }
     return stars;
   };
