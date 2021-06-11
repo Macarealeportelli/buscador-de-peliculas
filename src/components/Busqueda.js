@@ -51,7 +51,7 @@ const Busqueda = () => {
   return (
     <>
       <StyledSection>
-        <Titulo>Resultados de la Búsqueda</Titulo>
+        <Titulo>Resultados para la Búsqueda: {valorBuscado}</Titulo>
 
         <Container>
           {resultados.map((elemento) => (

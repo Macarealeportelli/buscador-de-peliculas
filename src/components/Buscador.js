@@ -12,6 +12,12 @@ const StyledSearch = styled.div`
   align-items: center;
 `;
 
+const Icono = styled.span`
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+`;
+
 const Buscador = () => {
   const history = useHistory();
 
@@ -37,7 +43,7 @@ const Buscador = () => {
 
   return (
     <StyledSearch>
-      <FontAwesomeIcon icon={faSearch} />
+      <Icono><FontAwesomeIcon icon={faSearch} /></Icono>
       <input
         value={valorDelInput}
         onChange={handleChange}
