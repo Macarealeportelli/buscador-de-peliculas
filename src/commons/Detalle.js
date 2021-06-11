@@ -108,6 +108,8 @@ const Detalle = () => {
       );
   }, []);
 
+  console.log(detalles)
+
   const generos = (detalles) =>
     detalles.genres
       ? detalles.genres.map((genero) => (
@@ -126,7 +128,7 @@ const Detalle = () => {
           <span key={produccion.name}>{produccion.name} , </span>
         ))
       : "-";
-  // console.log(generos(detalles))
+  
 
   return (
     <>

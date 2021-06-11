@@ -12,20 +12,20 @@ const Icono = styled.span`
 
 const Rating = ({rating}) => {
   const stars = [];
-  const fullStars = Math.floor(rating / 2);
-  const halfStars = rating % 2 ? 1 : 0;
-  const emptyStars = 5 - (fullStars + halfStars);
+  const estrellaCompleta = Math.floor(rating / 2);
+  const estrellaMitad = rating % 2 ? 1 : 0;
+  const estrellaVacia = 5 - (estrellaCompleta + estrellaMitad);
 
-  for (let i = 0; i < fullStars; i++) {
+  for (let i = 0; i < estrellaCompleta; i++) {
     stars.push(<Icono><FontAwesomeIcon icon={faStar} key={`estrellaCompleta${i}`} /></Icono>);
   }
 
   const completeStarsArray = () => {
-    halfStars &&
+    estrellaMitad &&
       stars.push(<Icono><FontAwesomeIcon icon={faStarHalfAlt} key={`estrellaMitad`} /></Icono>);
 
-    for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Icono><FontAwesomeIcon icon={fasStar} key={`estrellaVacia-${i}`} /></Icono>);
+    for (let i = 0; i < estrellaVacia; i++) {
+      stars.push(<Icono><FontAwesomeIcon icon={fasStar} key={`estrellaVacia${i}`} /></Icono>);
     }
     return stars;
   };
