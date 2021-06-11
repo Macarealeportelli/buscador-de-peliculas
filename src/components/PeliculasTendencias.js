@@ -38,6 +38,8 @@ const PeliculasTendencias = () => {
             key={pelicula.id}
             title={pelicula.title}
             poster_path={pelicula.poster_path}
+            id={pelicula.id}
+            mediaType={'movie'}
           />
         ))}
       </ContenedorTarjetas>

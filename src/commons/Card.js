@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import Detalle from "./Detalle";
+import { Link } from "react-router-dom";
 
-const Tarjeta = styled.article`
+
+const Tarjeta = styled(Link)`
   margin: 5px;
   width: 18%;
 
@@ -10,6 +11,7 @@ const Tarjeta = styled.article`
   flex-direction: column;
 
   color: #fafafa;
+  text-decoration: none;
 `;
 
 const Imagen = styled.img`
@@ -33,20 +35,21 @@ const Titulo = styled.h4`
   margin-left: 5px;
 `;
 
-const handleClickDetalle=(id)=>{
-  console.log('me hiceron click', id)
-}
 
-const Card = ({ title, poster_path , id}) => {
+
+const Card = ({ title, poster_path , id, mediaType}) => {
   // console.log(id)
+  console.log(mediaType)
   return (
-   
-    <Tarjeta onClick={handleClickDetalle}>
-      <Contenedor>
+   <Tarjeta
+    to={`/${mediaType}/${id}/info`}
+    >
+         <Contenedor>
         <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
         <Titulo>{title}</Titulo>
       </Contenedor>
     </Tarjeta>
+    
   );
 };
 
