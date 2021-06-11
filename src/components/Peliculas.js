@@ -43,6 +43,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
+
 const URL_PELICULAS_POPULARES =
   "https://api.themoviedb.org/3/movie/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
@@ -59,6 +60,8 @@ const Peliculas = () => {
   const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
 
+  console.log(peliculasPopulares)
+
   const peliculasAEstrenar = useFetchPeliculas(URL_PELICULAS_A_ESTRENAR);
   const destacadasPeliculasAEstrenar = peliculasAEstrenar.slice(0, 5);
 
@@ -68,10 +71,7 @@ const Peliculas = () => {
   const peliculasMejoresCriticas = useFetchPeliculas(
     URL_PELICULAS_MEJORES_CRITICAS
   );
-  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(
-    0,
-    5
-  );
+  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);
 
   return (
     <>
@@ -87,11 +87,14 @@ const Peliculas = () => {
         </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasPopulares.map((pelicula) => (
+        
             <Card
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
+              mediaType={'movie'}
+
             />
           ))}
         </ContenedorTarjetas>
@@ -111,6 +114,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={'movie'}
             />
           ))}
         </ContenedorTarjetas>
@@ -131,6 +136,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={'movie'}
             />
           ))}
         </ContenedorTarjetas>
@@ -150,6 +157,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={'movie'}
             />
           ))}
         </ContenedorTarjetas>

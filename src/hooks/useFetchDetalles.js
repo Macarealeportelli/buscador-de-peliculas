@@ -11,7 +11,7 @@ const useFetchDetalles = (url) => {
   }, [])
 
 
-  return detalles
+  return detalles;
 }
 
 export default useFetchDetalles;
