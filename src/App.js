@@ -52,17 +52,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
-const StyledSection=styled.section`
-    width: 100%;
-    height: auto;
-    background-color: grey;
-    margin:0;
 
-    display:flex;
-    justify-content: center;
-    flex-wrap:wrap;
-
-`
 
 function App() {
   return (

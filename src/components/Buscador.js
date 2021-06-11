@@ -2,14 +2,26 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Busqueda from "./Busqueda";
 import { useHistory } from "react-router-dom";
 
 const StyledSearch = styled.div`
-  width: 150px;
+  width: 400px;
   display: flex;
   align-items: center;
+`;
+
+const StyledInput = styled.input`
+background-color: rgb(35,39,42);
+height: 20px;
+width: 500px;
+padding: 5px;
+border: 1px solid #fafafa;
+color: #fafafa;
+font-family: "Montserrat Alternates";
+font-size: 18px;
+font-weight: 500;
 `;
 
 const Icono = styled.span`
@@ -36,7 +48,7 @@ const Buscador = () => {
         setValorDelInput("")
       history.push(`/`);
     }
-    // setValorDelInput("")
+    
   };
 
   console.log(valorDelInput);
@@ -44,7 +56,7 @@ const Buscador = () => {
   return (
     <StyledSearch>
       <Icono><FontAwesomeIcon icon={faSearch} /></Icono>
-      <input
+      <StyledInput
         value={valorDelInput}
         onChange={handleChange}
         type="text"

@@ -40,7 +40,6 @@ const Busqueda = () => {
     `)
       .then((res) => res.json())
       .then((data) =>
-        // console.log(data)
         setResultados(data.results)
       );
   }, [valorBuscado]);
