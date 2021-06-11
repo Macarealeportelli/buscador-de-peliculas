@@ -32,6 +32,7 @@ const BarraNavegacion = styled.nav`
   display: flex;
   padding: 10px;
  
+ font-size: 30px;
 
   background-color: rgb(35, 39, 42);
   color: #fafafa;
