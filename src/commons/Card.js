@@ -39,7 +39,7 @@ const Titulo = styled.h4`
 
 const Card = ({ title, poster_path , id, mediaType}) => {
   // console.log(id)
-  console.log(mediaType)
+  // console.log(mediaType)
   return (
    <Tarjeta
     to={`/${mediaType}/${id}/info`}

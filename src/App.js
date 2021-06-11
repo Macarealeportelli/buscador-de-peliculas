@@ -18,6 +18,7 @@ import Detalle from "./commons/Detalle.js";
 import Reparto from "./commons/Reparto";
 import Video from "./commons/Video";
 import Similares from "./commons/Similares";
+import Busqueda from "./components/Busqueda";
 
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -77,6 +78,7 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/peliculas" component={Peliculas} />
           <Route exact path="/series" component={Series} />
+          <Route exact path="/search/multi/:valorDelInput" component={Busqueda} />
           <Route exact path="/peliculas-tendencias" component={PeliculasTendencias} />
           <Route exact path="/peliculas-populares" component={PeliculasPopulares} />
           <Route exact path="/peliculas-a-estrenar" component={PeliculasAEstrenar} />

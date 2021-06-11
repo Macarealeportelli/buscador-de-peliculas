@@ -1,25 +1,41 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
+import { useState, useEffect } from "react";
+import Busqueda from './Busqueda';
+
+
+
 const StyledSearch = styled.div`
-width: 150px;
-display: flex;
-align-items: center;
+  width: 150px;
+  display: flex;
+  align-items: center;
 `;
 
+const Buscador = () => {
+  const [valorDelInput, setValorDelInput] = useState([]);
+
+  const handleChange = (e) => {
+    setValorDelInput(e.target.value);
+    <Busqueda value={valorDelInput}/>
+    
+  };
+
+  console.log(valorDelInput);
 
 
-
-
-const Buscador=()=>{
-
-    return(
-        <StyledSearch>
-            <FontAwesomeIcon icon={ faSearch}/>
-            <input type="text" placeholder="Búsqueda..."/>
-        </StyledSearch>
-    )
+  return (
+    <StyledSearch>
+      <FontAwesomeIcon icon={faSearch} />
+      <input
+        value={valorDelInput}
+        onChange={handleChange}
+        type="text"
+        placeholder="Búsqueda..."
+      />
+    </StyledSearch>
+  );
 };
 
 export default Buscador;
