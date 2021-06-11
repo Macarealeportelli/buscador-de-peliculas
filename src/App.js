@@ -24,7 +24,7 @@ import Busqueda from "./components/Busqueda";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faHome, faVideo, faTv} from '@fortawesome/free-solid-svg-icons';
 
-// import {faHome} from '@fortawesome/free-solid-svg-icons';
+
 
 const BarraNavegacion = styled.nav`
   width: 100%;
@@ -39,6 +39,8 @@ const BarraNavegacion = styled.nav`
 
   display: flex;
   align-items: center;
+
+
 `;
 
 const StyledLink = styled(Link)`

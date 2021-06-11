@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const Tarjeta = styled(Link)`
   margin: 5px;
-  width: 18%;
+  width: 200px;
 
   display: flex;
 
@@ -12,10 +12,16 @@ const Tarjeta = styled(Link)`
 
   color: #fafafa;
   text-decoration: none;
+
+  
+}
+ 
 `;
 
 const Imagen = styled.img`
   width: 100%;
+  
+  
 `;
 const Contenedor = styled.div`
   width: 100%;
@@ -26,6 +32,10 @@ const Contenedor = styled.div`
   justify-content: center;
 
   flex-direction: column;
+
+
+
+
 `;
 
 const Titulo = styled.h4`
@@ -33,6 +43,7 @@ const Titulo = styled.h4`
   font-size: 14px;
   font-weight: 800;
   margin-left: 5px;
+
 `;
 
 
