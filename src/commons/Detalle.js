@@ -73,6 +73,16 @@ const StyledLink = styled(Link)`
   }
 `;
 
+const StyledLinkDetalle = styled(Link)`
+  margin: 5px;
+  text-decoration: none;
+  color: blue;
+  &:visited {
+    color: blue;
+  }
+  
+ 
+`;
 
 const Detalle = ()=>{
    
@@ -97,12 +107,14 @@ useEffect(() => {
 
 console.log(detalles)
 
-//    const generos = (detalles)=>{
-//     detalles.genres.map((genero)=>{
-//         <Link  to={`/${mediaType}/${genero.name}/${genero.id}/page/1`} key={genero.name}></Link> })
-//    } 
+   const generos = (detalles)=> detalles.genres ? 
+         detalles.genres.map((genero)=>
+        <StyledLinkDetalle  to={`/${mediaType}/${genero.name}/${genero.id}/page/1`} key={genero.name}> {genero.name}</StyledLinkDetalle> ) : "-"
 
 
+    const producciones = (detalles)=>detalles.production_companies ? 
+        detalles.production_companies.map((produccion)=> <span>{produccion.name} , </span>) : "-"
+// console.log(generos(detalles))
 
     return(
         <>
@@ -125,10 +137,10 @@ console.log(detalles)
                 <p>Rating: {detalles.vote_average}</p>
                 <p>{detalles.overview}</p>
                 <p>Duración: {detalles.runtime} min.</p>
-                <p>Géneros:  </p>
+                <p>Géneros: {generos(detalles)} </p>
                 <p>Presupuesto: </p>
                 <p>Recaudación: $ {detalles.revenue}</p>
-                <p>Producción: </p>
+                <p>Producción: {producciones(detalles)}</p>
                 <h5>Iconitos/links</h5>
                 
             </div>
