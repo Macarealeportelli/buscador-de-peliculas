@@ -68,10 +68,7 @@ const Peliculas = () => {
   const peliculasMejoresCriticas = useFetchPeliculas(
     URL_PELICULAS_MEJORES_CRITICAS
   );
-  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(
-    0,
-    5
-  );
+  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);
 
   return (
     <>
@@ -92,6 +89,8 @@ const Peliculas = () => {
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
+              mediaType={pelicula.media_type}
+
             />
           ))}
         </ContenedorTarjetas>
@@ -111,6 +110,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={pelicula.media_type}
             />
           ))}
         </ContenedorTarjetas>
@@ -131,6 +132,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={pelicula.media_type}
             />
           ))}
         </ContenedorTarjetas>
@@ -150,6 +153,8 @@ const Peliculas = () => {
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
+              id={pelicula.id}
+              mediaType={pelicula.media_type}
             />
           ))}
         </ContenedorTarjetas>

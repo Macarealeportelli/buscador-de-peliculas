@@ -24,6 +24,7 @@ const Container = styled.section`
 
 const Icono = styled.span`
   margin-left: 10px;
+  font-size: 20px;
 `;
 
 const Titulo = styled.h2`
@@ -32,6 +33,7 @@ const Titulo = styled.h2`
   font-weight: 800;
 
   display: flex;
+  align-items: center;
 `;
 
 const StyledLink = styled(Link)`

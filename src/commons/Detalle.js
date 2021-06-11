@@ -3,6 +3,9 @@ import styled from 'styled-components';
 import { useState, useEffect } from 'react';
 import { useHistory, useParams, useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
+import Rating from './Rating';
+
+
 
 const StyledSection = styled.section`
   /* padding: 20px; */
@@ -65,11 +68,14 @@ font-weight: 900;
 const StyledLink = styled(Link)`
   margin: 20px;
   text-decoration: none;
+  color: #fafafa;
+
   &:visited {
     color: #fafafa;
   }
   &:active {
     color: rgb(33, 150, 243);
+    border-bottom: 2px solid #fafafa;
   }
 `;
 
@@ -80,8 +86,16 @@ const StyledLinkDetalle = styled(Link)`
   &:visited {
     color: blue;
   }
-  
- 
+   
+`;
+
+const FlexContainer= styled.div`
+display: flex;
+align-items: center;
+`;
+
+const Parrafo = styled.p`
+margin-left: 5px;
 `;
 
 const Detalle = ()=>{
@@ -91,7 +105,6 @@ console.log(mediaType, id)
 
 const [detalles, setDetalles] = useState([])
 
-const URL_DETALLES= `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES`;
 
 useEffect(() => {
     
@@ -113,18 +126,23 @@ console.log(detalles)
 
 
     const producciones = (detalles)=>detalles.production_companies ? 
-        detalles.production_companies.map((produccion)=> <span>{produccion.name} , </span>) : "-"
+        detalles.production_companies.map((produccion)=> <span key={produccion.name}>{produccion.name} , </span>) : "-"
 // console.log(generos(detalles))
+
+
+
+
+
 
     return(
         <>
         <StyledSection>
-        <ImagenBanner src={`https://image.tmdb.org/t/p/w300${detalles.backdrop_path}`} />
+        <ImagenBanner src={`https://image.tmdb.org/t/p/w1280${detalles.backdrop_path}`} />
         <BarraNavegacion>
-          <StyledLink to="/" >INFO</StyledLink> 
-          <StyledLink to="/">REPARTO</StyledLink>
-          <StyledLink to="/">VIDEOS</StyledLink>
-          <StyledLink to="/">SIMILARES</StyledLink>
+          <StyledLink to={`/${mediaType}/${id}/info`} >INFO</StyledLink> 
+          <StyledLink to={`/${mediaType}/${id}/cast`}>REPARTO</StyledLink>
+          <StyledLink to={`/${mediaType}/${id}/video`}>VIDEOS</StyledLink>
+          <StyledLink to={`/${mediaType}/${id}/similar`}>SIMILARES</StyledLink>
          
         </BarraNavegacion>
 
@@ -134,11 +152,11 @@ console.log(detalles)
            </Contenedor>
             <div>
                 <h2>{detalles.title}</h2>
-                <p>Rating: {detalles.vote_average}</p>
+                <FlexContainer><Rating rating={detalles.vote_average}/> <Parrafo>({detalles.vote_average})</Parrafo> </FlexContainer>
                 <p>{detalles.overview}</p>
                 <p>Duración: {detalles.runtime} min.</p>
                 <p>Géneros: {generos(detalles)} </p>
-                <p>Presupuesto: </p>
+                <p>Presupuesto: $ {detalles.budget}</p>
                 <p>Recaudación: $ {detalles.revenue}</p>
                 <p>Producción: {producciones(detalles)}</p>
                 <h5>Iconitos/links</h5>
