@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
-import styled from 'styled-components';
+import { useState, useEffect } from "react";
+import styled from "styled-components";
+import Card from "../commons/Card";
 
-
+import { useParams } from "react-router-dom";
 
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";
@@ -25,22 +26,27 @@ const Container = styled.section`
   flex-wrap: wrap;
 `;
 
-const Busqueda = ({value}) => {
+const Busqueda = () => {
+  const params = useParams();
 
-    const valorBuscado = value
+  const valorBuscado = params.valorDelInput;
 
-    const [busqueda, setBusqueda]= useState([]);
+  console.log(valorBuscado);
 
-    useEffect(()=> {
-    fetch(`https://api.themoviedb.org/3/search/multi?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1&include_adult=false`)
-    .then((res)=> res.json())
-    .then((data)=>console.log(data))
-    },[valorBuscado]);
+  const [resultados, setResultados] = useState([]);
 
+  useEffect(() => {
+    fetch(`https://api.themoviedb.org/3/search/multi?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES&query=${valorBuscado}&page=1
+    `)
+      .then((res) => res.json())
+      .then((data) =>
+        // console.log(data)
+        setResultados(data.results)
+      );
+  }, [valorBuscado]);
 
-
-
-
+  console.log(resultados)
+  
 
   return (
     <>
@@ -48,15 +54,15 @@ const Busqueda = ({value}) => {
         <Titulo>Resultados de la Búsqueda</Titulo>
 
         <Container>
-          {/* {destacadasPelisTendencia.map((pelicula) => (
+          {resultados.map((elemento) => (
             <Card
-              key={pelicula.id}
-              title={pelicula.title}
-              poster_path={pelicula.poster_path}
-              id={pelicula.id}
-              mediaType={pelicula.media_type}
+              key={elemento.id}
+              title={elemento.title ? elemento.title : elemento.name}
+              poster_path={elemento.poster_path? elemento.poster_path : elemento.profile_path }
+              id={elemento.id}
+              mediaType={elemento.media_type}
             />
-          ))} */}
+          ))}
         </Container>
       </StyledSection>
     </>

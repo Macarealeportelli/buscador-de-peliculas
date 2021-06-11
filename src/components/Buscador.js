@@ -3,9 +3,8 @@ import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
 
 import { useState, useEffect } from "react";
-import Busqueda from './Busqueda';
-
-
+import Busqueda from "./Busqueda";
+import { useHistory } from "react-router-dom";
 
 const StyledSearch = styled.div`
   width: 150px;
@@ -14,16 +13,27 @@ const StyledSearch = styled.div`
 `;
 
 const Buscador = () => {
-  const [valorDelInput, setValorDelInput] = useState([]);
+  const history = useHistory();
+
+  const [valorDelInput, setValorDelInput] = useState("");
 
   const handleChange = (e) => {
-    setValorDelInput(e.target.value);
-    <Busqueda value={valorDelInput}/>
+    e.preventDefault();
+    console.log(e.target.value)
+    if (e.target.value) {
     
+      setValorDelInput(e.target.value);
+      history.push(`/search/multi/${e.target.value}`);
+
+      <Busqueda value={e.target.value} />;
+    } else {
+        setValorDelInput("")
+      history.push(`/`);
+    }
+    // setValorDelInput("")
   };
 
   console.log(valorDelInput);
-
 
   return (
     <StyledSearch>
