@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar , faStarHalfAlt } from "@fortawesome/free-solid-svg-icons";
-// import { fasStar } from "@fortawesome/free-regular-svg-icons";
+import { faStar as fasStar } from "@fortawesome/free-regular-svg-icons";
 
 const Icono = styled.span`
   margin-left: 10px;
@@ -17,15 +17,15 @@ const Rating = ({rating}) => {
   const emptyStars = 5 - (fullStars + halfStars);
 
   for (let i = 0; i < fullStars; i++) {
-    stars.push(<Icono><FontAwesomeIcon icon={faStar} key={`full-${i}`} /></Icono>);
+    stars.push(<Icono><FontAwesomeIcon icon={faStar} key={`estrellaCompleta${i}`} /></Icono>);
   }
 
   const completeStarsArray = () => {
     halfStars &&
-      stars.push(<Icono><FontAwesomeIcon icon={faStarHalfAlt} key={`half`} /></Icono>);
+      stars.push(<Icono><FontAwesomeIcon icon={faStarHalfAlt} key={`estrellaMitad`} /></Icono>);
 
     for (let i = 0; i < emptyStars; i++) {
-      stars.push(<Icono><FontAwesomeIcon icon={faStar} key={`empty-${i}`} /></Icono>);
+      stars.push(<Icono><FontAwesomeIcon icon={fasStar} key={`estrellaVacia-${i}`} /></Icono>);
     }
     return stars;
   };
