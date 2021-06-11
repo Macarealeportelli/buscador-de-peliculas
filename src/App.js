@@ -83,7 +83,10 @@ function App() {
           <Route exact path="/series-populares" component={SeriesPopulares} />
           <Route exact path="/series-mejores-criticas" component={SeriesMejoresCriticas} />
           <Route exact path="/series-al-aire" component={SeriesAlAire} /> 
-          <Route exact path="/movie/337404" component={Detalle}/>
+          <Route exact path="/:mediaType/:id/info" component={Detalle}/>
+          <Route exact path="/:mediaType/:id/cast" component={Detalle}/>
+          <Route exact path="/:mediaType/:id/videos" component={Detalle}/>
+          <Route exact path="/:mediaType/:id/similar" component={Detalle}/>
         </Switch>
       </BrowserRouter>
       

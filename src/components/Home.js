@@ -57,10 +57,12 @@ const URL_PELICULAS_TENDENCIA =
 const Home = () => {
   const peliculasTendencia = useFetchPeliculas(URL_PELICULAS_TENDENCIA);
   const destacadasPelisTendencia = peliculasTendencia.slice(0, 5);
-  console.log(peliculasTendencia)
+  // console.log(peliculasTendencia)
 
   const seriesTendencias = useFetchSeries(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
+  // console.log(seriesTendencias)
+
 
   return (
     <>
@@ -80,6 +82,7 @@ const Home = () => {
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
+              mediaType={pelicula.media_type}
             />
           ))}
         </Container>
@@ -100,6 +103,7 @@ const Home = () => {
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
+              mediaType={serie.media_type}
             />
           ))}
         </Container>
