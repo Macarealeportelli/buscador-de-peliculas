@@ -1,8 +1,18 @@
 import styled from "styled-components";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {
+  BrowserRouter,
+  Switch,
+  useParams,
+  Route,
+  useRouteMatch,
+} from "react-router-dom";
 import { Link } from "react-router-dom";
 import Rating from "./Rating";
+
+import Reparto from "./Reparto";
+import Video from "./Video";
+import Similares from "./Similares";
 
 const StyledSection = styled.section`
   background-color: rgb(35, 39, 42);
@@ -92,7 +102,6 @@ const Parrafo = styled.p`
 `;
 
 const Detalle = () => {
-
   const { mediaType, id } = useParams();
 
   const [detalles, setDetalles] = useState([]);
@@ -102,13 +111,11 @@ const Detalle = () => {
       `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES`
     )
       .then((res) => res.json())
-      
-      .then((data) =>
-        setDetalles(data)
-      );
+
+      .then((data) => setDetalles(data));
   }, []);
 
-  console.log(detalles)
+  console.log(detalles);
 
   const generos = (detalles) =>
     detalles.genres
@@ -128,7 +135,9 @@ const Detalle = () => {
           <span key={produccion.name}>{produccion.name} , </span>
         ))
       : "-";
-  
+
+  const { path, url } = useRouteMatch();
+  // console.log(match)
 
   return (
     <>
@@ -136,13 +145,22 @@ const Detalle = () => {
         <ImagenBanner
           src={`https://image.tmdb.org/t/p/w1280${detalles.backdrop_path}`}
         />
+
         <BarraNavegacion>
-          <StyledLink to={`/${mediaType}/${id}/info`}>INFO</StyledLink>
-          <StyledLink to={`/${mediaType}/${id}/cast`}>REPARTO</StyledLink>
-          <StyledLink to={`/${mediaType}/${id}/video`}>VIDEOS</StyledLink>
-          <StyledLink to={`/${mediaType}/${id}/similar`}>SIMILARES</StyledLink>
+          <StyledLink to={`${url}/info`}>INFO</StyledLink>
+          <StyledLink to={`${url}/cast`}>REPARTO</StyledLink>
+          <StyledLink to={`${url}/video`}>VIDEOS</StyledLink>
+          <StyledLink to={`${url}/similar`}>SIMILARES</StyledLink>
         </BarraNavegacion>
 
+        <Switch>
+        
+          <Route path={`${path}/cast`} component={Reparto} />
+          <Route path={`${path}/videos`} component={Video} />
+          <Route path={`${path}/similar`} component={Similares} />
+        </Switch>
+
+      
         <ContenedorGeneral>
           <Contenedor>
             <Imagen
@@ -156,20 +174,29 @@ const Detalle = () => {
               <Parrafo>({detalles.vote_average})</Parrafo>{" "}
             </FlexContainer>
             <p>{detalles.overview}</p>
-            <p>Duración: {detalles.runtime} min.</p>
+            <p>
+              Duración:{" "}
+              {detalles.runtime ? detalles.runtime : detalles.episode_run_time}{" "}
+              min.
+            </p>
             <p>Géneros: {generos(detalles)} </p>
-            <p>
-              Presupuesto:{" "}
-              {detalles.budget ? "$" + detalles.budget.toLocaleString() : "-"}
-            </p>
-            <p>
-              Recaudación:{" "}
-              {detalles.revenue ? "$" + detalles.revenue.toLocaleString() : "-"}
-            </p>
+            {detalles.budget ? (
+              <p>Presupuesto:{" " + "$" + detalles.budget.toLocaleString()} </p>
+            ) : (
+              <p>Temporadas:{" " + detalles.number_of_seasons} </p>
+            )}
+
+            {detalles.revenue ? (
+              <p>Recaudación:{" " + "$" + detalles.revenue.toLocaleString()}</p>
+            ) : (
+              <p>Episodios:{" " + detalles.number_of_episodes} </p>
+            )}
+
             <p>Producción: {producciones(detalles)}</p>
             <h5>Iconitos/links</h5>
           </div>
         </ContenedorGeneral>
+        
       </StyledSection>
     </>
   );
