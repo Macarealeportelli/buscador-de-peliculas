@@ -39,8 +39,7 @@ const Parrafo = styled.p`
 `;
 
 const Card = ({ title, poster_path, id, mediaType, character }) => {
-  // console.log(id)
-  // console.log(mediaType)
+ 
   return (
     <Tarjeta to={`/${mediaType}/${id}/info`}>
       <Contenedor>

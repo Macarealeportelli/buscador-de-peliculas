@@ -82,7 +82,7 @@ const Detalle = () => {
         <BarraNavegacion>
           <StyledLink to={`${url}/info`}>INFO</StyledLink>
           <StyledLink to={`${url}/cast`}>REPARTO</StyledLink>
-          <StyledLink to={`${url}/video`}>VIDEOS</StyledLink>
+          <StyledLink to={`${url}/videos`}>VIDEOS</StyledLink>
           <StyledLink to={`${url}/similar`}>SIMILARES</StyledLink>
         </BarraNavegacion>
 

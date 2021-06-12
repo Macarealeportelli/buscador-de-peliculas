@@ -20,7 +20,7 @@ const StyledSection = styled.section`
 const Similares = () => {
   const { mediaType, id } = useParams();
 
-  const URL_SIMILARES = `https://api.themoviedb.org/3/${mediaType}/${id}/similar?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1`;
+  const URL_SIMILARES = `https://api.themoviedb.org/3/${mediaType}/${id}/similar?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-EN&page=1`;
 
   const similares = useFetchTarjetas(URL_SIMILARES);
 
