@@ -70,7 +70,7 @@ const Detalle = () => {
   const detalles = useFetch(URL_INFO);
 
   const { path, url } = useRouteMatch();
-  console.log(path, url);
+  
 
   return (
     <>
