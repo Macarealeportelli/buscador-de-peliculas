@@ -1,11 +1,12 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchPeliculas from "../hooks/useFetchPeliculas";
+
 
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 const StyledSection = styled.section`
   padding: 20px;
@@ -57,18 +58,18 @@ const URL_PELICULAS_MEJORES_CRITICAS =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const Peliculas = () => {
-  const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
+  const peliculasPopulares = useFetchTarjetas(URL_PELICULAS_POPULARES);
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
 
   console.log(peliculasPopulares)
 
-  const peliculasAEstrenar = useFetchPeliculas(URL_PELICULAS_A_ESTRENAR);
+  const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
   const destacadasPeliculasAEstrenar = peliculasAEstrenar.slice(0, 5);
 
-  const peliculasEnCines = useFetchPeliculas(URL_PELICULAS_EN_CINES);
+  const peliculasEnCines = useFetchTarjetas(URL_PELICULAS_EN_CINES);
   const destacadasPeliculasEnCines = peliculasEnCines.slice(0, 5);
 
-  const peliculasMejoresCriticas = useFetchPeliculas(
+  const peliculasMejoresCriticas = useFetchTarjetas(
     URL_PELICULAS_MEJORES_CRITICAS
   );
   const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);

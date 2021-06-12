@@ -1,6 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchSeries from "../hooks/useFetchSeries";
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 
 const Titulo = styled.h2`
@@ -29,7 +29,7 @@ const URL_SERIES_AL_AIRE =
 
 const SeriesAlAire=()=>{
 
-const seriesAlAire = useFetchSeries(URL_SERIES_AL_AIRE);
+const seriesAlAire = useFetchTarjetas(URL_SERIES_AL_AIRE);
 
     return (
         <StyledSection>

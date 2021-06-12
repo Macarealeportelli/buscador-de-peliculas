@@ -1,6 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchSeries from "../hooks/useFetchSeries";
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 
 const Titulo = styled.h2`
@@ -29,7 +29,7 @@ const URL_SERIES_MEJORES_CRITICAS =
   "https://api.themoviedb.org/3/tv/top_rated?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const SeriesMejoresCriticas=()=>{
-    const seriesMejoresCriticas = useFetchSeries(URL_SERIES_MEJORES_CRITICAS);
+    const seriesMejoresCriticas = useFetchTarjetas(URL_SERIES_MEJORES_CRITICAS);
     return (
         <StyledSection>
         

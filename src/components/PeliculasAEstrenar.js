@@ -1,6 +1,7 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchPeliculas from "../hooks/useFetchPeliculas";
+
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";
@@ -27,7 +28,7 @@ const URL_PELICULAS_A_ESTRENAR =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const PeliculasAEstrenar=()=>{
-    const peliculasAEstrenar = useFetchPeliculas(URL_PELICULAS_A_ESTRENAR);
+    const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
 
     return (
         <StyledSection>
