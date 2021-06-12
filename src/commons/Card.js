@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 const Tarjeta = styled(Link)`
   margin: 5px;
-  width: 200px;
+  width: 18%;
 
   display: flex;
 
@@ -12,30 +11,19 @@ const Tarjeta = styled(Link)`
 
   color: #fafafa;
   text-decoration: none;
-
-  
-}
- 
 `;
 
 const Imagen = styled.img`
   width: 100%;
-  
-  
 `;
 const Contenedor = styled.div`
   width: 100%;
   margin: 5px;
- 
 
   display: flex;
   justify-content: center;
 
   flex-direction: column;
-
-
-
-
 `;
 
 const Titulo = styled.h4`
@@ -43,24 +31,26 @@ const Titulo = styled.h4`
   font-size: 14px;
   font-weight: 800;
   margin-left: 5px;
-
 `;
 
+const Parrafo = styled.p`
+  font-family: "Montserrat Alternates";
+  font-size: 12px;
+`;
 
-
-const Card = ({ title, poster_path , id, mediaType}) => {
+const Card = ({ title, poster_path, id, mediaType, character }) => {
   // console.log(id)
   // console.log(mediaType)
   return (
-   <Tarjeta
-    to={`/${mediaType}/${id}/info`}
-    >
-         <Contenedor>
+    <Tarjeta to={`/${mediaType}/${id}/info`}>
+      <Contenedor>
         <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
-        <Titulo>{title}</Titulo>
+        <Titulo>
+          {title}
+          <>{character ? <Parrafo>{character}</Parrafo> : ""}</>
+        </Titulo>
       </Contenedor>
     </Tarjeta>
-    
   );
 };
 
