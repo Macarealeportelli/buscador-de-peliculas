@@ -27,25 +27,25 @@ const ContenedorTarjetas = styled.section`
 const URL_PELICULAS_A_ESTRENAR =
   "https://api.themoviedb.org/3/movie/upcoming?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-const PeliculasAEstrenar=()=>{
-    const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
+const PeliculasAEstrenar = () => {
+  const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
 
-    return (
-        <StyledSection>
-        <Titulo>Películas a estrenar</Titulo>
-        <ContenedorTarjetas>
-          {peliculasAEstrenar.map((pelicula) => (
-            <Card
-              key={pelicula.id}
-              title={pelicula.title}
-              poster_path={pelicula.poster_path}
-              id={pelicula.id}
-              mediaType={'movie'}
-            />
-          ))}
-        </ContenedorTarjetas>
-      </StyledSection>
-    )
+  return (
+    <StyledSection>
+      <Titulo>Películas a estrenar</Titulo>
+      <ContenedorTarjetas>
+        {peliculasAEstrenar.map((pelicula) => (
+          <Card
+            key={pelicula.id}
+            title={pelicula.title}
+            poster_path={pelicula.poster_path}
+            id={pelicula.id}
+            mediaType={"movie"}
+          />
+        ))}
+      </ContenedorTarjetas>
+    </StyledSection>
+  );
 };
 
 export default PeliculasAEstrenar;

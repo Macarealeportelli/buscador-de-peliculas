@@ -26,25 +26,25 @@ const ContenedorTarjetas = styled.section`
 const URL_PELICULAS_EN_CINES =
   "https://api.themoviedb.org/3/movie/now_playing?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-const PeliculasEnCines=()=>{
-    const peliculasEnCines = useFetchTarjetas(URL_PELICULAS_EN_CINES);
+const PeliculasEnCines = () => {
+  const peliculasEnCines = useFetchTarjetas(URL_PELICULAS_EN_CINES);
 
-    return (
-        <StyledSection>
-        <Titulo>Películas en cines</Titulo>
-        <ContenedorTarjetas>
-          {peliculasEnCines.map((pelicula) => (
-            <Card
-              key={pelicula.id}
-              title={pelicula.title}
-              poster_path={pelicula.poster_path}
-              id={pelicula.id}
-              mediaType={'movie'}
-            />
-          ))}
-        </ContenedorTarjetas>
-      </StyledSection>
-    )
+  return (
+    <StyledSection>
+      <Titulo>Películas en cines</Titulo>
+      <ContenedorTarjetas>
+        {peliculasEnCines.map((pelicula) => (
+          <Card
+            key={pelicula.id}
+            title={pelicula.title}
+            poster_path={pelicula.poster_path}
+            id={pelicula.id}
+            mediaType={"movie"}
+          />
+        ))}
+      </ContenedorTarjetas>
+    </StyledSection>
+  );
 };
 
 export default PeliculasEnCines;

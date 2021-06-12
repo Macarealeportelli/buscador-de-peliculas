@@ -1,17 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from "react";
 
 const useFetchTarjetas = (url) => {
-  const [tarjetas, setTarjetas] = useState([])
+  const [tarjetas, setTarjetas] = useState([]);
 
   useEffect(() => {
     fetch(url)
-    .then(res => res.json())
-    // data.results 
-    .then(data => setTarjetas(data.results))
-  }, [])
+      .then((res) => res.json())
 
+      .then((data) => setTarjetas(data.results));
+  }, []);
 
-  return tarjetas
-}
+  return tarjetas;
+};
 
 export default useFetchTarjetas;

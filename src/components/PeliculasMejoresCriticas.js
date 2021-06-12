@@ -27,26 +27,26 @@ const ContenedorTarjetas = styled.section`
 const URL_PELICULAS_MEJORES_CRITICAS =
   "https://api.themoviedb.org/3/movie/top_rated?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-const PeliculasMejoresCriticas=()=>{
-    const peliculasMejoresCriticas = useFetchTarjetas(
-        URL_PELICULAS_MEJORES_CRITICAS
-      );
-    return (
-        <StyledSection>
-        <Titulo>Películas con mejores críticas</Titulo>
-        <ContenedorTarjetas>
-          {peliculasMejoresCriticas.map((pelicula) => (
-            <Card
-              key={pelicula.id}
-              title={pelicula.title}
-              poster_path={pelicula.poster_path}
-              id={pelicula.id}
-              mediaType={'movie'}
-            />
-          ))}
-        </ContenedorTarjetas>
-      </StyledSection>
-    )
+const PeliculasMejoresCriticas = () => {
+  const peliculasMejoresCriticas = useFetchTarjetas(
+    URL_PELICULAS_MEJORES_CRITICAS
+  );
+  return (
+    <StyledSection>
+      <Titulo>Películas con mejores críticas</Titulo>
+      <ContenedorTarjetas>
+        {peliculasMejoresCriticas.map((pelicula) => (
+          <Card
+            key={pelicula.id}
+            title={pelicula.title}
+            poster_path={pelicula.poster_path}
+            id={pelicula.id}
+            mediaType={"movie"}
+          />
+        ))}
+      </ContenedorTarjetas>
+    </StyledSection>
+  );
 };
 
 export default PeliculasMejoresCriticas;

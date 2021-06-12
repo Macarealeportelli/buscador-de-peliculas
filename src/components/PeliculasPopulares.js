@@ -23,28 +23,27 @@ const ContenedorTarjetas = styled.section`
   flex-wrap: wrap;
 `;
 
-
 const URL_PELICULAS_POPULARES =
   "https://api.themoviedb.org/3/movie/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-const PeliculasPopulares=()=>{
-    const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
-    return (
-        <StyledSection>
-        <Titulo>Películas Populares</Titulo>
-        <ContenedorTarjetas>
-          {peliculasPopulares.map((pelicula) => (
-            <Card
-              key={pelicula.id}
-              title={pelicula.title}
-              poster_path={pelicula.poster_path}
-              id={pelicula.id}
-              mediaType={'movie'}
-            />
-          ))}
-        </ContenedorTarjetas>
-      </StyledSection>
-    )
+const PeliculasPopulares = () => {
+  const peliculasPopulares = useFetchPeliculas(URL_PELICULAS_POPULARES);
+  return (
+    <StyledSection>
+      <Titulo>Películas Populares</Titulo>
+      <ContenedorTarjetas>
+        {peliculasPopulares.map((pelicula) => (
+          <Card
+            key={pelicula.id}
+            title={pelicula.title}
+            poster_path={pelicula.poster_path}
+            id={pelicula.id}
+            mediaType={"movie"}
+          />
+        ))}
+      </ContenedorTarjetas>
+    </StyledSection>
+  );
 };
 
 export default PeliculasPopulares;

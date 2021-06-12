@@ -39,13 +39,8 @@ const Busqueda = () => {
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES&query=${valorBuscado}&page=1
     `)
       .then((res) => res.json())
-      .then((data) =>
-        setResultados(data.results)
-      );
+      .then((data) => setResultados(data.results));
   }, [valorBuscado]);
-
-  console.log(resultados)
-  
 
   return (
     <>
@@ -57,7 +52,11 @@ const Busqueda = () => {
             <Card
               key={elemento.id}
               title={elemento.title ? elemento.title : elemento.name}
-              poster_path={elemento.poster_path? elemento.poster_path : elemento.profile_path }
+              poster_path={
+                elemento.poster_path
+                  ? elemento.poster_path
+                  : elemento.profile_path
+              }
               id={elemento.id}
               mediaType={elemento.media_type}
             />

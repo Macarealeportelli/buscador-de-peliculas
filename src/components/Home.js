@@ -1,10 +1,8 @@
 import styled from "styled-components";
 
-
 import Card from "../commons/Card";
 
 import { Link } from "react-router-dom";
-
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
@@ -55,17 +53,12 @@ const URL_SERIES_TENDENCIAS =
 const URL_PELICULAS_TENDENCIA =
   "https://api.themoviedb.org/3/trending/movie/week?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-  
-
 const Home = () => {
   const peliculasTendencia = useFetchTarjetas(URL_PELICULAS_TENDENCIA);
   const destacadasPelisTendencia = peliculasTendencia.slice(0, 5);
-  console.log(peliculasTendencia)
 
   const seriesTendencias = useFetchTarjetas(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
-  // console.log(seriesTendencias)
-
 
   return (
     <>

@@ -50,10 +50,9 @@ const Parrafo = styled.p`
 const Info = () => {
   const { mediaType, id } = useParams();
 
- const URL_INFO =  `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES`
+  const URL_INFO = `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES`;
 
-
-const detalles = useFetch(URL_INFO)
+  const detalles = useFetch(URL_INFO);
 
   const generos = (detalles) =>
     detalles.genres

@@ -15,33 +15,24 @@ import SeriesPopulares from "./components/SeriesPopulares";
 import SeriesMejoresCriticas from "./components/SeriesMejoresCriticas";
 import SeriesAlAire from "./components/SeriesAlAire";
 import Detalle from "./commons/Detalle.js";
-// import Reparto from "./commons/Reparto";
-// import Video from "./commons/Video";
-// import Similares from "./commons/Similares";
-
 import Busqueda from "./components/Busqueda";
 
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {faHome, faVideo, faTv} from '@fortawesome/free-solid-svg-icons';
-
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHome, faVideo, faTv } from "@fortawesome/free-solid-svg-icons";
 
 const BarraNavegacion = styled.nav`
   width: 100%;
   height: 40px;
   display: flex;
   padding: 10px;
- 
- font-size: 30px;
+
+  font-size: 30px;
 
   background-color: rgb(35, 39, 42);
   color: #fafafa;
 
   display: flex;
   align-items: center;
-
-
 `;
 
 const StyledLink = styled(Link)`
@@ -55,16 +46,20 @@ const StyledLink = styled(Link)`
   }
 `;
 
-
-
 function App() {
   return (
     <>
       <BrowserRouter>
         <BarraNavegacion>
-          <StyledLink to="/"><FontAwesomeIcon icon={faHome}/></StyledLink>
-          <StyledLink to="/peliculas"><FontAwesomeIcon icon={faVideo}/></StyledLink>
-          <StyledLink to="/series"><FontAwesomeIcon icon={faTv}/></StyledLink>
+          <StyledLink to="/">
+            <FontAwesomeIcon icon={faHome} />
+          </StyledLink>
+          <StyledLink to="/peliculas">
+            <FontAwesomeIcon icon={faVideo} />
+          </StyledLink>
+          <StyledLink to="/series">
+            <FontAwesomeIcon icon={faTv} />
+          </StyledLink>
           <Buscador />
         </BarraNavegacion>
 
@@ -72,21 +67,47 @@ function App() {
           <Route exact path="/" component={Home} />
           <Route exact path="/peliculas" component={Peliculas} />
           <Route exact path="/series" component={Series} />
-          <Route exact path="/search/multi/:valorDelInput" component={Busqueda} />
-          <Route exact path="/peliculas-tendencias" component={PeliculasTendencias} />
-          <Route exact path="/peliculas-populares" component={PeliculasPopulares} />
-          <Route exact path="/peliculas-a-estrenar" component={PeliculasAEstrenar} />
-          <Route exact path="/peliculas-en-cines" component={PeliculasEnCines} />
-          <Route exact path="/peliculas-mejores-criticas" component={PeliculasMejoresCriticas} />
-          <Route exact path="/series-tendencias" component={SeriesTendencia} /> 
+          <Route
+            exact
+            path="/search/multi/:valorDelInput"
+            component={Busqueda}
+          />
+          <Route
+            exact
+            path="/peliculas-tendencias"
+            component={PeliculasTendencias}
+          />
+          <Route
+            exact
+            path="/peliculas-populares"
+            component={PeliculasPopulares}
+          />
+          <Route
+            exact
+            path="/peliculas-a-estrenar"
+            component={PeliculasAEstrenar}
+          />
+          <Route
+            exact
+            path="/peliculas-en-cines"
+            component={PeliculasEnCines}
+          />
+          <Route
+            exact
+            path="/peliculas-mejores-criticas"
+            component={PeliculasMejoresCriticas}
+          />
+          <Route exact path="/series-tendencias" component={SeriesTendencia} />
           <Route exact path="/series-populares" component={SeriesPopulares} />
-          <Route exact path="/series-mejores-criticas" component={SeriesMejoresCriticas} />
-          <Route exact path="/series-al-aire" component={SeriesAlAire} /> 
-          <Route  path="/:mediaType/:id/info" component={Detalle}/>
-        
+          <Route
+            exact
+            path="/series-mejores-criticas"
+            component={SeriesMejoresCriticas}
+          />
+          <Route exact path="/series-al-aire" component={SeriesAlAire} />
+          <Route path="/:mediaType/:id/info" component={Detalle} />
         </Switch>
       </BrowserRouter>
-      
     </>
   );
 }

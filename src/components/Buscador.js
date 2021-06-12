@@ -13,15 +13,15 @@ const StyledSearch = styled.div`
 `;
 
 const StyledInput = styled.input`
-background-color: rgb(35,39,42);
-height: 20px;
-width: 500px;
-padding: 5px;
-border: 1px solid #fafafa;
-color: #fafafa;
-font-family: "Montserrat Alternates";
-font-size: 18px;
-font-weight: 500;
+  background-color: rgb(35, 39, 42);
+  height: 20px;
+  width: 500px;
+  padding: 5px;
+  border: 1px solid #fafafa;
+  color: #fafafa;
+  font-family: "Montserrat Alternates";
+  font-size: 18px;
+  font-weight: 500;
 `;
 
 const Icono = styled.span`
@@ -37,25 +37,23 @@ const Buscador = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
-    console.log(e.target.value)
+    console.log(e.target.value);
     if (e.target.value) {
-    
       setValorDelInput(e.target.value);
       history.push(`/search/multi/${e.target.value}`);
 
       <Busqueda value={e.target.value} />;
     } else {
-        setValorDelInput("")
+      setValorDelInput("");
       history.push(`/`);
     }
-    
   };
-
-  console.log(valorDelInput);
 
   return (
     <StyledSearch>
-      <Icono><FontAwesomeIcon icon={faSearch} /></Icono>
+      <Icono>
+        <FontAwesomeIcon icon={faSearch} />
+      </Icono>
       <StyledInput
         value={valorDelInput}
         onChange={handleChange}

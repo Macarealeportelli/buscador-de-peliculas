@@ -2,7 +2,6 @@ import Card from "../commons/Card.js";
 import styled from "styled-components";
 import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
-
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";
   font-size: 30px;
@@ -27,18 +26,13 @@ const Container = styled.section`
 const URL_SERIES_AL_AIRE =
   "https://api.themoviedb.org/3/tv/on_the_air?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
-const SeriesAlAire=()=>{
+const SeriesAlAire = () => {
+  const seriesAlAire = useFetchTarjetas(URL_SERIES_AL_AIRE);
 
-const seriesAlAire = useFetchTarjetas(URL_SERIES_AL_AIRE);
+  return (
+    <StyledSection>
+      <Titulo>Series populares</Titulo>
 
-    return (
-        <StyledSection>
-        
-        <Titulo>
-          Series populares
-         
-        </Titulo>
-      
       <Container>
         {seriesAlAire.map((serie) => (
           <Card
@@ -46,12 +40,12 @@ const seriesAlAire = useFetchTarjetas(URL_SERIES_AL_AIRE);
             title={serie.name}
             poster_path={serie.poster_path}
             id={serie.id}
-            mediaType={'tv'}
+            mediaType={"tv"}
           />
         ))}
       </Container>
     </StyledSection>
-    )
+  );
 };
 
 export default SeriesAlAire;

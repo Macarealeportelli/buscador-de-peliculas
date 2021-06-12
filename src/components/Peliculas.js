@@ -1,7 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
 
-
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -44,7 +43,6 @@ const StyledLink = styled(Link)`
   }
 `;
 
-
 const URL_PELICULAS_POPULARES =
   "https://api.themoviedb.org/3/movie/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
@@ -61,8 +59,6 @@ const Peliculas = () => {
   const peliculasPopulares = useFetchTarjetas(URL_PELICULAS_POPULARES);
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
 
-  console.log(peliculasPopulares)
-
   const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
   const destacadasPeliculasAEstrenar = peliculasAEstrenar.slice(0, 5);
 
@@ -72,7 +68,10 @@ const Peliculas = () => {
   const peliculasMejoresCriticas = useFetchTarjetas(
     URL_PELICULAS_MEJORES_CRITICAS
   );
-  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(0,5);
+  const destacadasPeliculasMejoresCriticas = peliculasMejoresCriticas.slice(
+    0,
+    5
+  );
 
   return (
     <>
@@ -88,14 +87,12 @@ const Peliculas = () => {
         </StyledLink>
         <ContenedorTarjetas>
           {destacadasPeliculasPopulares.map((pelicula) => (
-        
             <Card
               key={pelicula.id}
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
-              mediaType={'movie'}
-
+              mediaType={"movie"}
             />
           ))}
         </ContenedorTarjetas>
@@ -116,7 +113,7 @@ const Peliculas = () => {
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
-              mediaType={'movie'}
+              mediaType={"movie"}
             />
           ))}
         </ContenedorTarjetas>
@@ -138,7 +135,7 @@ const Peliculas = () => {
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
-              mediaType={'movie'}
+              mediaType={"movie"}
             />
           ))}
         </ContenedorTarjetas>
@@ -159,7 +156,7 @@ const Peliculas = () => {
               title={pelicula.title}
               poster_path={pelicula.poster_path}
               id={pelicula.id}
-              mediaType={'movie'}
+              mediaType={"movie"}
             />
           ))}
         </ContenedorTarjetas>

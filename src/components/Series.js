@@ -1,7 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
 
-
 import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -80,7 +79,7 @@ const Series = () => {
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
-              mediaType={'tv'}
+              mediaType={"tv"}
             />
           ))}
         </ContenedorTarjetas>
@@ -101,7 +100,7 @@ const Series = () => {
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
-              mediaType={'tv'}
+              mediaType={"tv"}
             />
           ))}
         </ContenedorTarjetas>
@@ -123,7 +122,7 @@ const Series = () => {
               title={serie.name}
               poster_path={serie.poster_path}
               id={serie.id}
-              mediaType={'tv'}
+              mediaType={"tv"}
             />
           ))}
         </ContenedorTarjetas>

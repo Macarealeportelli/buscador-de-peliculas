@@ -40,7 +40,7 @@ const PeliculasTendencias = () => {
             title={pelicula.title}
             poster_path={pelicula.poster_path}
             id={pelicula.id}
-            mediaType={'movie'}
+            mediaType={"movie"}
           />
         ))}
       </ContenedorTarjetas>
