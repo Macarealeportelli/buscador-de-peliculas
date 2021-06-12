@@ -105,7 +105,7 @@ function App() {
             component={SeriesMejoresCriticas}
           />
           <Route exact path="/series-al-aire" component={SeriesAlAire} />
-          <Route path="/:mediaType/:id/info" component={Detalle} />
+          <Route exaxt path="/:mediaType/:id/info" component={Detalle} />
         </Switch>
       </BrowserRouter>
     </>
