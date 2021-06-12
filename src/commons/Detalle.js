@@ -154,11 +154,13 @@ const Detalle = () => {
         </BarraNavegacion>
 
         <Switch>
+        
           <Route path={`${path}/cast`} component={Reparto} />
           <Route path={`${path}/videos`} component={Video} />
           <Route path={`${path}/similar`} component={Similares} />
         </Switch>
 
+      
         <ContenedorGeneral>
           <Contenedor>
             <Imagen
@@ -194,6 +196,7 @@ const Detalle = () => {
             <h5>Iconitos/links</h5>
           </div>
         </ContenedorGeneral>
+        
       </StyledSection>
     </>
   );
