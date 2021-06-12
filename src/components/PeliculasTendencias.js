@@ -1,6 +1,7 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchPeliculas from "../hooks/useFetchPeliculas";
+
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";
@@ -27,7 +28,7 @@ const URL_PELICULAS_TENDENCIA =
   "https://api.themoviedb.org/3/trending/movie/week?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const PeliculasTendencias = () => {
-  const peliculasTendencia = useFetchPeliculas(URL_PELICULAS_TENDENCIA);
+  const peliculasTendencia = useFetchTarjetas(URL_PELICULAS_TENDENCIA);
 
   return (
     <StyledSection>

@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import useFetchPeliculas from "../hooks/useFetchPeliculas";
-import useFetchSeries from "../hooks/useFetchSeries";
+
+
 import Card from "../commons/Card";
 
 import { Link } from "react-router-dom";
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 const StyledSection = styled.section`
   padding: 20px;
@@ -57,11 +58,11 @@ const URL_PELICULAS_TENDENCIA =
   
 
 const Home = () => {
-  const peliculasTendencia = useFetchPeliculas(URL_PELICULAS_TENDENCIA);
+  const peliculasTendencia = useFetchTarjetas(URL_PELICULAS_TENDENCIA);
   const destacadasPelisTendencia = peliculasTendencia.slice(0, 5);
-  // console.log(peliculasTendencia)
+  console.log(peliculasTendencia)
 
-  const seriesTendencias = useFetchSeries(URL_SERIES_TENDENCIAS);
+  const seriesTendencias = useFetchTarjetas(URL_SERIES_TENDENCIAS);
   const destacadasSeriesTendencia = seriesTendencias.slice(0, 5);
   // console.log(seriesTendencias)
 

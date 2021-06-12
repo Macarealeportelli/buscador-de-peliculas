@@ -30,7 +30,7 @@ const Rating = ({rating}) => {
     return stars;
   };
 
-  console.log(stars)
+ 
   return (
     <>
       <div>

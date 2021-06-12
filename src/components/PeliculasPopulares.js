@@ -1,6 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchPeliculas from "../hooks/useFetchPeliculas";
+import useFetchPeliculas from "../hooks/useFetchTarjetas";
 
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";

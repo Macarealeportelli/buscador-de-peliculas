@@ -1,6 +1,6 @@
 import Card from "../commons/Card.js";
 import styled from "styled-components";
-import useFetchSeries from "../hooks/useFetchSeries";
+import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 
 const Titulo = styled.h2`
@@ -32,7 +32,7 @@ const URL_SERIES_TENDENCIAS =
 
 const SeriesTendencia=()=>{
 
-    const seriesTendencia = useFetchSeries(URL_SERIES_TENDENCIAS)
+    const seriesTendencia = useFetchTarjetas(URL_SERIES_TENDENCIAS)
 
     return (
        <StyledSection>
