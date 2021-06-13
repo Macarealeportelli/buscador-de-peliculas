@@ -9,8 +9,9 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import useFetchTarjetas from "../hooks/useFetchTarjetas";
 
 const StyledSection = styled.section`
-  padding: 20px;
-  background-color: rgb(35, 39, 42);
+  width: 100%;
+  padding: 10px;
+  background-color:rgb(35, 39, 42);
   display: flex;
   flex-direction: column;
   color: #fafafa;

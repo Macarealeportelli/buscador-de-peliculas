@@ -5,6 +5,8 @@ import styled from "styled-components";
 import Card from "./Card";
 
 const StyledSection = styled.section`
+ width: 100%;
+  padding: 20px;
   background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;

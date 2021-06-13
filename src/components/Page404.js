@@ -18,6 +18,7 @@ const StyledSection = styled.section`
   }
 `;
 
+
 const Icono = styled.span`
   font-size: 300px;
 `;

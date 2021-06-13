@@ -14,7 +14,8 @@ const Titulo = styled.h2`
 `;
 
 const StyledSection = styled.section`
-  padding: 20px;
+  width: 100%;
+  padding: 10px;
   background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;

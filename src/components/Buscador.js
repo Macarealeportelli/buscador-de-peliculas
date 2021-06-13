@@ -17,7 +17,8 @@ const StyledInput = styled.input`
   height: 20px;
   width: 500px;
   padding: 5px;
-  border: 1px solid #fafafa;
+  border: 0.5px solid #fafafa;
+  border-radius: 8px;
   color: #fafafa;
   font-family: "Montserrat Alternates";
   font-size: 18px;

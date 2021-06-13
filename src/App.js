@@ -18,23 +18,37 @@ import Detalle from "./commons/Detalle.js";
 import Busqueda from "./components/Busqueda";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHome, faVideo, faTv } from "@fortawesome/free-solid-svg-icons";
+import { faHome, faVideo, faTv, faHeart } from "@fortawesome/free-solid-svg-icons";
 import Page404 from "./components/Page404.js";
 
 const BarraNavegacion = styled.nav`
   width: 100%;
-  height: 40px;
+  height: 50px;
   display: flex;
   padding: 10px;
 
   font-size: 30px;
 
-  background-color: rgb(35, 39, 42);
+  background-color: black;
   color: #fafafa;
 
-  display: flex;
+  
   align-items: center;
 `;
+
+const Footer = styled.footer`
+ width: 100%;
+  height: 80px;
+  padding: 10px;
+  display: flex;
+  font-family: "Montserrat Alternates";
+  font-size: 18px;
+  background-color: black;
+  color: #fafafa;
+  align-items: center;
+  justify-content: center;
+  
+`
 
 const StyledLink = styled(Link)`
   margin: 20px;
@@ -45,6 +59,12 @@ const StyledLink = styled(Link)`
   &:active {
     color: rgb(33, 150, 243);
   }
+`;
+
+const Icono = styled.span`
+  margin: 5px;
+  font-size: 20px;
+  color: red;
 `;
 
 function App() {
@@ -110,6 +130,8 @@ function App() {
           <Route  component={Page404} />
         </Switch>
       </BrowserRouter>
+
+      <Footer> Realizado por Maca <Icono><FontAwesomeIcon icon={faHeart}/></Icono> para ADA</Footer>
     </>
   );
 }
