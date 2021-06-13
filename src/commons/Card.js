@@ -2,15 +2,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Tarjeta = styled(Link)`
+
+
   margin: 5px;
   width: 18%;
-
+  min-width: 200px;
   display: flex;
-
   flex-direction: column;
-
   color: #fafafa;
   text-decoration: none;
+  
 `;
 
 const Imagen = styled.img`
@@ -31,6 +32,10 @@ const Titulo = styled.h4`
   font-size: 14px;
   font-weight: 800;
   margin-left: 5px;
+
+  @media (max-width: 768px) {
+    font-size: 12px;
+  }
 `;
 
 const Parrafo = styled.p`

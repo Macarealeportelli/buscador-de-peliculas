@@ -59,6 +59,10 @@ const StyledLink = styled(Link)`
   &:active {
     color: rgb(33, 150, 243);
   }
+  @media (max-width: 576px) {
+    display: none;
+  }
+
 `;
 
 const Icono = styled.span`
@@ -66,6 +70,42 @@ const Icono = styled.span`
   font-size: 20px;
   color: red;
 `;
+
+const BarraNavegacionResponsive = styled.nav`
+  width: 100%;
+  height: 40px;
+  display: flex;
+  padding: 10px;
+  display: none;
+  font-size: 30px;
+  justify-content: space-around;
+  background-color: black;
+  color: #fafafa;
+  position: fixed;
+  top: 615px;
+  align-items: center;
+
+  @media (max-width: 576px) {
+    display: flex;
+  }
+`;
+const StyledLinkResponsive = styled(Link)`
+  
+  text-decoration: none;
+  &:visited {
+    color: #fafafa;
+  }
+  &:active {
+    color: rgb(33, 150, 243);
+  }
+
+  display: none;
+
+  @media (max-width: 576px) {
+    display: flex;
+  }
+`;
+
 
 function App() {
   return (
@@ -83,6 +123,19 @@ function App() {
           </StyledLink>
           <Buscador />
         </BarraNavegacion>
+
+        <BarraNavegacionResponsive>
+          <StyledLinkResponsive to="/">
+            <FontAwesomeIcon icon={faHome} />
+          </StyledLinkResponsive>
+          <StyledLinkResponsive to="/peliculas">
+            <FontAwesomeIcon icon={faVideo} />
+          </StyledLinkResponsive>
+          <StyledLinkResponsive to="/series">
+            <FontAwesomeIcon icon={faTv} />
+          </StyledLinkResponsive>
+        </BarraNavegacionResponsive>
+
 
         <Switch>
           <Route exact path="/" component={Home} />

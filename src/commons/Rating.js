@@ -7,6 +7,15 @@ import { faStar as fasStar } from "@fortawesome/free-regular-svg-icons";
 const Icono = styled.span`
   margin-left: 10px;
   font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 10px;
+  }
+
 `;
 
 const Rating = ({ rating }) => {

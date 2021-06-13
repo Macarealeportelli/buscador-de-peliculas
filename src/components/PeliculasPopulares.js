@@ -8,6 +8,13 @@ const Titulo = styled.h2`
   font-weight: 800;
 
   display: flex;
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 15px;
+  }
 `;
 
 const StyledSection = styled.section`
