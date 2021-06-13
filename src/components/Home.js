@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 
 const StyledSection = styled.section`
+  width: 100%;
   padding: 20px;
   background-color: rgb(35, 39, 42);
   display: flex;

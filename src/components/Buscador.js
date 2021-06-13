@@ -7,12 +7,14 @@ import Busqueda from "./Busqueda";
 import { useHistory } from "react-router-dom";
 
 const StyledSearch = styled.div`
-  width: 400px;
+width: 100%;
+  max-width: 400px;
   display: flex;
   align-items: center;
 `;
 
 const StyledInput = styled.input`
+
 background-color: rgb(35,39,42);
 height: 20px;
 width: 500px;
