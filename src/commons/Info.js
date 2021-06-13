@@ -12,6 +12,20 @@ const ContenedorGeneral = styled.div`
 
   font-family: "Montserrat Alternates";
   font-size: 14px;
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    font-size: 12px;
+  }
+
+  @media (max-width: 768px) {
+    font-size: 11px;
+    /* flex-direction: column; */
+  }
+
+  @media (max-width: 575.98px) {
+    
+    flex-direction: column;
+  }
 `;
 
 const Imagen = styled.img`
@@ -20,13 +34,22 @@ const Imagen = styled.img`
 
 const Contenedor = styled.div`
   width: 100%;
-  max-width: 300px;
+  
+  max-width: 250px;
   margin: 15px;
 
   display: flex;
   justify-content: center;
 
   flex-direction: column;
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    min-width: 200px;
+  }
+  @media (max-width: 575.98px) {
+    
+    min-width: 150px;
+  }
 `;
 
 const StyledLinkDetalle = styled(Link)`

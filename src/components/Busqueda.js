@@ -11,6 +11,14 @@ const Titulo = styled.h2`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 15px;
+  }
 `;
 
 const StyledSection = styled.section`

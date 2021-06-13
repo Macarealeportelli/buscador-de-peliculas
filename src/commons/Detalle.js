@@ -10,7 +10,8 @@ import Info from "./Info";
 
 const StyledSection = styled.section`
   width: 100%;
-  padding: 10px;
+  margin:0;
+ 
   background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;
@@ -38,6 +39,16 @@ const BarraNavegacion = styled.nav`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 8px;
+  
+  }
+
 `;
 
 const StyledLink = styled(Link)`

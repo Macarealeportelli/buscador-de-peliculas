@@ -20,6 +20,14 @@ const Titulo = styled.h2`
   font-weight: 800;
 
   display: flex;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 15px;
+  }
 `;
 
 const ContenedorTarjetas = styled.div`
@@ -29,6 +37,14 @@ const ContenedorTarjetas = styled.div`
 
 const Icono = styled.span`
   margin-left: 10px;
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 10px;
+  }
+
 `;
 
 const StyledLink = styled(Link)`
