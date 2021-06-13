@@ -11,7 +11,7 @@ import Info from "./Info";
 const StyledSection = styled.section`
   width: 100%;
   margin:0;
- 
+ padding: 10px;
   background-color: rgb(35, 39, 42);
   display: flex;
   flex-direction: column;

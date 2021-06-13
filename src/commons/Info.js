@@ -19,7 +19,7 @@ const ContenedorGeneral = styled.div`
 
   @media (max-width: 768px) {
     font-size: 11px;
-    /* flex-direction: column; */
+    
   }
 
   @media (max-width: 575.98px) {
@@ -128,7 +128,7 @@ const Info = () => {
         )}
 
         <p>Producción: {producciones(detalles)}</p>
-        <h5>Iconitos/links</h5>
+        
       </div>
     </ContenedorGeneral>
   );
