@@ -94,9 +94,9 @@ const Detalle = () => {
           <Route path={`${path}/videos`} component={Video} />
           <Route path={`${path}/similar`} component={Similares} />
         </Switch>
-        {/* <ContenedorGeneral>
+        <ContenedorGeneral>
           <Info/>
-        </ContenedorGeneral> */}
+        </ContenedorGeneral>
       </StyledSection>
     </>
   );
