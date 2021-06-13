@@ -19,6 +19,7 @@ import Busqueda from "./components/Busqueda";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHome, faVideo, faTv } from "@fortawesome/free-solid-svg-icons";
+import Page404 from "./components/Page404.js";
 
 const BarraNavegacion = styled.nav`
   width: 100%;
@@ -106,6 +107,7 @@ function App() {
           />
           <Route exact path="/series-al-aire" component={SeriesAlAire} />
           <Route exaxt path="/:mediaType/:id/info" component={Detalle} />
+          <Route  component={Page404} />
         </Switch>
       </BrowserRouter>
     </>
