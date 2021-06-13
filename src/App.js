@@ -82,7 +82,7 @@ const BarraNavegacionResponsive = styled.nav`
   background-color: black;
   color: #fafafa;
   position: fixed;
-  top: 615px;
+  top: 650px;
   align-items: center;
 
   @media (max-width: 576px) {
