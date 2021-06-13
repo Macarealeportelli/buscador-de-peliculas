@@ -25,6 +25,15 @@ const Container = styled.section`
 const Icono = styled.span`
   margin-left: 10px;
   font-size: 20px;
+
+  @media (max-width: 768px) {
+    font-size: 15px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 10px;
+  }
+
 `;
 
 const Titulo = styled.h2`
@@ -34,6 +43,14 @@ const Titulo = styled.h2`
 
   display: flex;
   align-items: center;
+
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
+  @media (max-width: 575.98px) {
+    font-size: 15px;
+  }
 `;
 
 const StyledLink = styled(Link)`
