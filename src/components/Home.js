@@ -81,6 +81,8 @@ const Home = () => {
   return (
     <>
       <StyledSection>
+
+      Podrias componentizar aca, repetis dos veces casi lo mismo en el codigo. 
         <StyledLink to="/peliculas-tendencias">
           <Titulo>
             Peliculas que son tendencia

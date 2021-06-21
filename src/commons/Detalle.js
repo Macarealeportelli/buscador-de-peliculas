@@ -80,6 +80,8 @@ const Detalle = () => {
 
   const URL_INFO = `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES`;
 
+  // como este usefetch tiene vacio su array de dependencias, no se va a ejecutar bien cuando 
+  // seleccionemos una pelicula en "similares"
   const detalles = useFetch(URL_INFO);
 
   const { path, url } = useRouteMatch();
@@ -106,6 +108,7 @@ const Detalle = () => {
           <Route path={`${path}/similar`} component={Similares} />
         </Switch>
         <ContenedorGeneral>
+        {/* como info esta aca, se va a mostrar siempre */}
           <Info/>
         </ContenedorGeneral>
       </StyledSection>

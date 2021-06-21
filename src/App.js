@@ -111,6 +111,8 @@ function App() {
   return (
     <>
       <BrowserRouter>
+
+      {/* Esto deberia ser un componente */}
         <BarraNavegacion>
           <StyledLink to="/">
             <FontAwesomeIcon icon={faHome} />
@@ -146,6 +148,8 @@ function App() {
             path="/search/multi/:valorDelInput"
             component={Busqueda}
           />
+
+          {/* Los siguientes componentes son todos muuuuy repetitivos. Deberian llamar todos al mismo componente reutilizable */}
           <Route
             exact
             path="/peliculas-tendencias"

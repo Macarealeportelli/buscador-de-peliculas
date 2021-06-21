@@ -59,6 +59,7 @@ const StyledLink = styled(Link)`
   }
 `;
 
+// estas variables deberian estar en un archivo aparte
 const URL_PELICULAS_POPULARES =
   "https://api.themoviedb.org/3/movie/popular?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
@@ -73,6 +74,8 @@ const URL_PELICULAS_MEJORES_CRITICAS =
 
 const Peliculas = () => {
   const peliculasPopulares = useFetchTarjetas(URL_PELICULAS_POPULARES);
+  // useFetch tarjetas podria recibir como un segundo parametro opcional la cantidad de peliculas
+  // a retornar, y hacer el slice, asi no repetis tanto aca 
   const destacadasPeliculasPopulares = peliculasPopulares.slice(0, 5);
 
   const peliculasAEstrenar = useFetchTarjetas(URL_PELICULAS_A_ESTRENAR);
@@ -93,6 +96,7 @@ const Peliculas = () => {
     <>
       <StyledSection>
         <StyledLink to="/peliculas-populares">
+        {/* repetis cuatro veces lo mismo aca: deberias componentizar */}
           {" "}
           <Titulo>
             Películas populares

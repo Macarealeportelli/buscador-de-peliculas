@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import useFetchTarjetas from "../hooks/useFetchTarjetas.js";
+import Peliculas from "./Peliculas.js";
 
 const StyledSection = styled.section`
   padding: 20px;
@@ -60,6 +61,7 @@ const URL_SERIES_AL_AIRE =
   "https://api.themoviedb.org/3/tv/on_the_air?api_key=e5c6d9951e2100ef1ce53ed994481153&language=en-US&page=1";
 
 const Series = () => {
+  // mismas observaciones aca que en Peliculas. Notas que parecidos son estos componentes? Podrian llamar al mismo asi no repetis tanto
   const seriesPopulares = useFetchTarjetas(URL_SERIES_POPULARES);
   const destacadasSeriesPopulares = seriesPopulares.slice(0, 5);
 

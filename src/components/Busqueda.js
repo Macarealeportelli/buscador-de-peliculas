@@ -38,12 +38,13 @@ const Container = styled.section`
 const Busqueda = () => {
   const params = useParams();
 
+  // preferi desestructurar: const { valorDelInput: valorBuscado } = params
   const valorBuscado = params.valorDelInput;
-
+// no dejes console log en entregas
   console.log(valorBuscado);
 
   const [resultados, setResultados] = useState([]);
-
+// aca podrias haber usado useFetchTarjetas
   useEffect(() => {
     fetch(`https://api.themoviedb.org/3/search/multi?api_key=e5c6d9951e2100ef1ce53ed994481153&language=es-ES&query=${valorBuscado}&page=1
     `)

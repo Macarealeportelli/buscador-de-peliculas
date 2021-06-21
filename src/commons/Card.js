@@ -51,6 +51,7 @@ const Card = ({ title, poster_path, id, mediaType, character }) => {
         <Imagen src={`https://image.tmdb.org/t/p/w300${poster_path}`} />
         <Titulo>
           {title}
+        {/* mejor asi: {character && <Parrafo>{character}</Parrafo> } */}
           <>{character ? <Parrafo>{character}</Parrafo> : ""}</>
         </Titulo>
       </Contenedor>
