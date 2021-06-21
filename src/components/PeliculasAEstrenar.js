@@ -2,7 +2,7 @@ import Card from "../commons/Card.js";
 import styled from "styled-components";
 
 import useFetchTarjetas from "../hooks/useFetchTarjetas";
-
+// repetis mucho estos estilos, podrian estar componentizados
 const Titulo = styled.h2`
   font-family: "Montserrat Alternates";
   font-size: 30px;

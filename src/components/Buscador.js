@@ -39,11 +39,13 @@ const Buscador = () => {
 
   const handleChange = (e) => {
     e.preventDefault();
+    // no dejes console log
     console.log(e.target.value);
     if (e.target.value) {
       setValorDelInput(e.target.value);
       history.push(`/search/multi/${e.target.value}`);
 
+      // esto no deberia estar aca! una funcion no puede retornar un componente de React
       <Busqueda value={e.target.value} />;
     } else {
       setValorDelInput("");

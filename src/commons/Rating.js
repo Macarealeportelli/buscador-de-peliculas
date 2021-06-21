@@ -19,6 +19,7 @@ const Icono = styled.span`
 `;
 
 const Rating = ({ rating }) => {
+  // resolviste muy bien esto!
   const stars = [];
   const estrellaCompleta = Math.floor(rating / 2);
   const estrellaMitad = rating % 2 ? 1 : 0;
